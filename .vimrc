@@ -34,12 +34,12 @@ set report =0                       " Always report changed lines
 set synmaxcol =200                  " only highlight first 200 columns
 
 
-set list                            " show non-printable characters
-if has('multi_byte') && &encoding ==# 'utf-8'
-    let &listchars ='tab:> ,extends:>,precedes:<,sbsp:.'
-else
-    let &listchars ='tab:> ,extends:>,precedes:<,sbsp:.'
-endif
+"set list                            " show non-printable characters
+"if has('multi_byte') && &encoding ==# 'utf-8'
+"    let &listchars ='tab:> ,extends:>,precedes:<,sbsp:.'
+"else
+"    let &listchars ='tab:> ,extends:>,precedes:<,sbsp:.'
+"endif
 
 
 set backup
