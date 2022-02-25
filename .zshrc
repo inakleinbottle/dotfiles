@@ -63,6 +63,10 @@ fi
 if hash starship 2>/dev/null; then 
     eval "$(starship init zsh)"
 else
-    load_zsh_plugin spaceship-prompt/spaceship-prompt
+    if [[ ! -d $ZSH_PLUGIN_DIR/spaceship ]]; then 
+        git clone "https://github.com/spaceship-prompt/spaceship-prompt.git" "$ZSH_PLUGIN_DIR/spaceship"
+    fi
+    source "$ZSH_PLUGIN_DIR/spaceship/spaceship.zsh"
+
 fi
 
