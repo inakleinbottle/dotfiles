@@ -60,6 +60,6 @@ if [[ "${TERM}" == "xterm-kitty" ]]; then
     alias ssh='kitty +kitten ssh'
 fi
 
-if [ -z $(hash starship) ]; then 
+if hash starship 2>/dev/null; then 
     eval "$(starship init zsh)"
 fi
