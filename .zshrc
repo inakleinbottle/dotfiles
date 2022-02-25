@@ -62,4 +62,7 @@ fi
 
 if hash starship 2>/dev/null; then 
     eval "$(starship init zsh)"
+else
+    load_zsh_plugin spaceship-prompt/spaceship-prompt
 fi
+
