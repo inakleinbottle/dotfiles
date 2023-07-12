@@ -1,11 +1,8 @@
 # Created by newuser for 5.8
 
 
-
 autoload -U colors && colors
 autoload -Uz promptinit && promptinit
-
-
 
 
 HISTFILE=~/.histfile
@@ -47,6 +44,7 @@ function load_zsh_plugin() {
     fi
 }
 
+source_file ${HOME}/.zsh_local
 
 load_zsh_config "functions.zsh"
 load_zsh_config "alias.zsh"
@@ -56,9 +54,6 @@ load_zsh_plugin zsh-users/zsh-completions
 source_file /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
-if [[ "${TERM}" == "xterm-kitty" ]]; then
-    alias ssh='kitty +kitten ssh'
-fi
 
 if hash starship 2>/dev/null; then 
     eval "$(starship init zsh)"

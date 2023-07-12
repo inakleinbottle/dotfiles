@@ -1,6 +1,10 @@
 [user]
-name = inakleinbottle
-email = sam@inakleinbottle.com
+name = Sam Morley
+email = admin@inakleinbottle.com
 
 [url "git@github.com:"]
     insteadof = github:
+[core]
+	autocrlf = input
+[init]
+	defaultBranch = main

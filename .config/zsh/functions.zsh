@@ -18,3 +18,14 @@ function pyenv() {
         source "${envs[1]}/bin/activate"
     fi
 }
+
+
+function new-git-repo() {
+    local name=$1
+    [[ $name == *.git ]] || name+=.git
+    print "Create new git repository $name"
+    ssh inakleinbottle-git "git init --bare $name" > /dev/null
+    if [ $? ]
+        print "Failed"
+    fi
+}
