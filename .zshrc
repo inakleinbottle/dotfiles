@@ -17,6 +17,9 @@ zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
 
+# Initialise vimode to insert mode
+vimode=1
+
 
 export ZSH_PLUGIN_DIR=$HOME/.config/zsh/plugins
 
@@ -65,3 +68,16 @@ else
 
 fi
 
+if hash zoxide 2> /dev/null; then
+    eval "$(zoxide init zsh)"
+fi
+
+if [ -d ${HOME}/.config/zsh/conf.d/ ]; then
+    for file in ${HOME}/.config/zsh/conf.d/*(N); do
+        source $file
+    done
+fi
+
+if [[ -d ${HOME}/.config/zsh/completions/ ]]; then
+    fpath+=${HOME}/.config/zsh/completions/
+fi

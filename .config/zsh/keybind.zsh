@@ -1,5 +1,5 @@
 
-autoload -Uz up-line-or-beginning-search down-lie-or-beginning-search
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 

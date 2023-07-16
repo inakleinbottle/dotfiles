@@ -1,6 +1,6 @@
-
-
 set nocompatible   " no vi compatibility, we're in vim
+
+set encoding=utf-8
 
 filetype plugin on   " load plugins for detected filetype
 filetype indent on   " enable automatic indentation
@@ -12,6 +12,7 @@ set expandtab       " Expand tabs to spaces
 set softtabstop =4  " Tab key indent by 4 spaces
 set shiftwidth =4   " >> indents by 4 spaces
 set shiftround      " >> indents to next multiple of 'shiftwidth'
+set belloff=all     " Don't make a sound
 
 set backspace =indent,eol,start     " Make backspace work as expected
 set hidden                          " Switch buffers without having to save first
@@ -22,7 +23,7 @@ set showmode                        " Show the current mode in the command line
 set showcmd                         " Show already typed keys when more are expected
 
 set incsearch                       " Highlight while searching with / or ?
-set hlsearch                        " Keep matches highlighted
+"set hlsearch                        " Keep matches highlighted
 
 set ttyfast                         " Faster redrawing
 set lazyredraw                      " only redraw when necessary
@@ -53,4 +54,6 @@ set undodir     =$HOME/.vim/files/undo
 set viminfo     ='100,n$HOME/.vim/files/info/viminfo
 
 
-let g:tex_flavor='latex'
+
+
+set clipboard=unnamedplus   " Use X clipboard

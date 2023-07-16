@@ -1,0 +1,52 @@
+
+
+general {
+    intervla = 1
+    colors = true
+    color_good="#FFFFFF"
+    color_degraded="#FFD75F"
+    color_bad="#D75F5F"
+}
+
+order += "volume master"
+order += "battery 0"
+order += "disk /"
+order += "cup_usage"
+order += "load"
+order += "tztime local"
+
+
+
+tztime local {
+    format = " %H:$M:%S %d-%m "
+}
+
+disk "/" {
+    format = " %avail "
+}
+cpu_usage {
+    format = " %usage "
+}
+load {
+    format = " %5min 5min "
+}
+
+volume master {
+    format = " %volume "
+    format_muted = " %volume "
+    device = "default"
+    mixer = "Master"
+    mixer_idx = 0
+}
+
+battery 0 {
+    format = " %status %percentage "
+    format_down = " DOWN "
+    format_chr = " CHARGING "
+    format_bat = " BATTERY "
+    format_unk = " UNKNOWN "
+    status_full = " FULL "
+    path = "/sys/class/power_supply/BAT%d/uevent"
+}
+
+
