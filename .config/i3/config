@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:monospace 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -22,6 +22,15 @@ font pango:monospace 8
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
+
+# Launch picom for compositing
+exec_always --no-startup-id picom -b
+
+# Launch dunst for notifications
+exec_always --no-startup-id dunst
+
+# Launch the polybar instance
+exec_always -no-startup-id /home/sam/.config/polybar/launch.sh
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -33,6 +42,18 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
+
+# Background
+exec_always --no-startup-id feh --bg-fill /usr/share/backgrounds/blue-geometric.jpg
+
+gaps inner 10
+gaps outer 0
+smart_gaps on
+
+# Smart borders
+smart_borders on
+
+
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -51,7 +72,8 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
+#bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec --no-startup-id rofi -show drun -run-shell-command '{terminal} -e zsh -ic "{cmd} && read"'
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -203,17 +225,15 @@ for_window [window_role="task-dialog"] floating enable
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        position top
-        status_command i3status
-        output primary
-        tray_output primary
+#bar {
+#        position top
+#       status_command i3status
+#        output primary
+#        tray_output primary
+#}
 
-}
 
-exec --no-startup-id xrdb ~/.Xresources
-exec --no-startup-id gnome-settings-daemon
-exec --no-startup-id libinput-gestures-setup start
+
 
 
 
