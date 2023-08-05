@@ -2,8 +2,6 @@
 name = Sam Morley
 email = admin@inakleinbottle.com
 
-[url "git@github.com:"]
-    insteadof = github:
 [core]
 	autocrlf = input
 [init]

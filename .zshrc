@@ -1,5 +1,8 @@
 # Created by newuser for 5.8
 
+if [[ -o login ]]; then
+    return
+fi
 
 autoload -U colors && colors
 autoload -Uz promptinit && promptinit
@@ -31,6 +34,8 @@ function source_file() {
 	    source "$1" >> /dev/null 2>> /dev/null
 	fi
 }
+
+source $HOME/.profile
 
 function load_zsh_config() {
     source_file "${HOME}/.config/zsh/$1"
@@ -81,3 +86,10 @@ fi
 if [[ -d ${HOME}/.config/zsh/completions/ ]]; then
     fpath+=${HOME}/.config/zsh/completions/
 fi
+
+
+if [[ ${TERM} == "alacritty" ]]; then
+    alias ssh='TERM=xterm-256color ssh'
+fi
+
+
