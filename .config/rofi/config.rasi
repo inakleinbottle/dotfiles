@@ -12,7 +12,6 @@ configuration {
     icon-theme:         "Bonny-Dark-Icons";
     
 
-    font:               "hack 10";
     terminal:           "alacritty";
 
     
@@ -37,4 +36,4 @@ configuration {
 
 }
 
-@theme "theme"
+@import "theme/launcher.rasi"

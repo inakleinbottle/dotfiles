@@ -92,4 +92,3 @@ if [[ ${TERM} == "alacritty" ]]; then
     alias ssh='TERM=xterm-256color ssh'
 fi
 
-
