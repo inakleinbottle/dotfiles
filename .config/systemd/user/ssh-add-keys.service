@@ -1,0 +1,11 @@
+[Unit]
+Description=Add ssh keys to agent
+PartOf=ssh-agent.service
+After=ssh-agent.service
+
+[Service]
+Type=oneshot
+ExecStart=%h/.config/scripts/add-ssh-keys.sh
+
+[Install]
+WantedBy=graphical-session.target
